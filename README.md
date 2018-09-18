@@ -129,8 +129,11 @@ python train.py --cfg=experiments/hm36/resnet152v1_ft/d-mh_ps-256_deconv256x3_mi
 By default, logging and model will be saved to *log* and *output* folder respectively.
 
 ### Test
-Download [model](https://www.dropbox.com/s/hfz5nkd39uisvbr/model_chall_train_152ft_384x288.pth.tar?dl=0) for CHALL_H80K, and place it under $project_root/model/hm36_challenge <br/> 
-cd to *pytorch_projects/hm36_challenge*  
+To run evaluation on CHALL_H80K Val dataset
+1. Download [model](https://www.dropbox.com/s/hfz5nkd39uisvbr/model_chall_train_152ft_384x288.pth.tar?dl=0)
+2. Place it under $project_root/model/hm36_challenge
+3. cd to *$project_root/pytorch_projects/hm36_challenge*
+4. execute command below
 ```bash
 python test.py --cfg experiments/hm36/resnet152v1_ft/d-mch_384x288_deconv256x3_min-int-l1_adam_bs12-4gpus/lr1e-4_x300-270-290.yaml --model=../../model/hm36_challenge/model_chall_train_152ft_384x288.pth.tar
 ```
