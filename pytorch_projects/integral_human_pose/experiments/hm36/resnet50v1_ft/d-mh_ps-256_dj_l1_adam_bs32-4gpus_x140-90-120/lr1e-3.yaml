@@ -1,0 +1,58 @@
+pytorch:
+  gpus: '0,1,2,3'
+  frequent: 100
+  output_path: './output/hm36/resnet50v1_ft'
+  log_path: './log/hm36/resnet50v1_ft'
+  block: resnet_direct_regression
+  loss: 'joint_location'
+dataset:
+  name:
+   - 'mpii'
+   - 'hm36'
+  path:
+   - 'mpii'
+   - 'hm36'
+  train_image_set:
+   - 'train'
+   - 'train'
+  test_image_set:
+   - 'valid'
+   - 'validmin'
+dataiter:
+    batch_images_per_ctx: 32
+    threads: 16
+    use_color_normalize: true
+    mean:
+    - 123.675 #- '0.485*255'
+    - 116.280 #- '0.456*255'
+    - 103.530 #- '0.406*255'
+    std:
+    - 58.395 #- '0.229*255'
+    - 57.120 #- '0.224*255'
+    - 57.375 #- '0.225*255'
+    target_id: 1
+optimizer:
+  lr: 0.001
+  lr_epoch_step: '90,120'
+  lr_factor: 0.1
+  optimizer_name: 'adam'
+train:
+  end_epoch: 140
+  model_prefix: 'model'
+  resume: false
+  patch_width: 256
+  patch_height: 256
+aug:
+    scale_factor: 0.25
+    rot_factor: 30
+    color_factor: 0.2
+    do_flip_aug: true
+loss:
+     loss_type: 'L1'
+network:
+  from_model_zoo: true
+  pretrained: 'None'
+
+  fea_map_size: 8
+
+  num_layers: 50
