@@ -6,7 +6,7 @@ The major contributors of this repository include [Xiao Sun](https://jimmysuen.g
 
 **Integral Regression** is initially described in an [ECCV 2018 paper](https://arxiv.org/abs/1711.08229). ([Slides](https://jimmysuen.github.io/slides/xiaosun_integral_human_pose_regression.pptx)).
 
-We build a [3D pose estimation system](https://arxiv.org/abs/1809.06079) based mainly on the Integral Regression, placing second in the [ECCV2018 3D Human Pose Estimation Challenge](http://vision.imar.ro/human3.6m/ranking.php). Note that, the winner [Sarandi et al.](https://arxiv.org/abs/1808.09316) also uses the Integral Regression (or soft-argmax) with a better [augmented 3D dataset](https://github.com/isarandi/synthetic-occlusion) in their method indicating the Integral Regression is the currently state-of-the-art 3D human pose estimation method.
+We build a [3D pose estimation system](https://arxiv.org/abs/1809.06079) based mainly on the Integral Regression, placing second in the [ECCV2018 3D Human Pose Estimation Challenge](http://vision.imar.ro/human3.6m/ranking.php). Note that, the winner [Sarandi et al.](https://arxiv.org/pdf/1809.04987.pdf) also uses the Integral Regression (or soft-argmax) with a better [augmented 3D dataset](https://github.com/isarandi/synthetic-occlusion) in their method indicating the Integral Regression is the currently state-of-the-art 3D human pose estimation method.
 
 The Integral Regression is also known as soft-argmax. Please refer to two contemporary works ([Luvizon et al.](https://arxiv.org/abs/1710.02322) and [Nibali et al.](https://arxiv.org/abs/1801.07372)) for a better comparision and more comprehensive understanding.
 
