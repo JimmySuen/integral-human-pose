@@ -79,11 +79,16 @@ pip install pyyaml
 ## Preparation for Training & Testing
 1. Download Human3.6M(ECCV18 Challenge) image from [Human3.6M Dataset](http://vision.imar.ro/human3.6m/description.php)
 2. Download MPII image from [MPII Human Pose Dataset](http://human-pose.mpi-inf.mpg.de/)
-3. Download cache file from [Dropbox](https://www.dropbox.com/sh/uouev0a1ao84ofd/AADAjJUdr_Fm-eubk7c_s2JTa?dl=0)
-4. Organize data like this
+3. Download COCO2017 image from [COCO Dataset](http://cocodataset.org/#home)
+4. Download cache file from [Dropbox](https://www.dropbox.com/sh/uouev0a1ao84ofd/AADAjJUdr_Fm-eubk7c_s2JTa?dl=0)
+5. Organize data like this
 ```
 ${PROJECT_ROOT}
  `-- data
+     `-- coco
+        |-- images
+        |-- annotations
+        |-- COCO_train2017_cache
      `-- mpii
         |-- images
         |-- annot
