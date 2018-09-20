@@ -4,7 +4,7 @@ import torch.utils.data as data
 
 from common.utility.image_processing_cv import get_single_patch_sample
 
-from common_pytorch.dataset.hm36 import from_mpii_to_hm36
+from common_pytorch.dataset.hm36 import from_mpii_to_hm36, from_coco_to_hm36
 
 class single_patch_Dataset(data.Dataset):
     def __init__(self, db, is_train, det_bbox_src, patch_width, patch_height, rect_3d_width, rect_3d_height, batch_size,
@@ -144,6 +144,84 @@ class mpii_hm36_eccv_challenge_Dataset(data.Dataset):
             self.count = 0
             self.idx = np.arange(self.num_samples1)
             np.random.shuffle(self.idx)
+
+        return img_patch.astype(np.float32), label.astype(np.float32), label_weight.astype(np.float32)
+
+    def __len__(self):
+        return self.db_length
+
+
+class mpii_coco_hm36_eccv_challenge_Dataset(data.Dataset):
+    def __init__(self, db, is_train, det_bbox_src, patch_width, patch_height, rect_3d_width, rect_3d_height, batch_size,
+                 mean, std, aug_config, label_func, label_config):
+
+        assert det_bbox_src == ''
+
+        self.db0 = db[0].jnt_bbox_db()
+        self.db1 = db[1].jnt_bbox_db()
+        self.db2 = db[2].jnt_bbox_db()
+
+        self.num_samples0 = len(self.db0)
+        self.num_samples1 = len(self.db1)
+        self.num_samples2 = len(self.db2)
+
+        from_mpii_to_hm36(self.db0)
+        from_coco_to_hm36(self.db1)
+
+        self.joint_num = db[2].joint_num
+
+        self.is_train = is_train
+        self.patch_width = patch_width
+        self.patch_height = patch_height
+        self.rect_3d_width = rect_3d_width
+        self.rect_3d_height = rect_3d_height
+        self.mean = mean
+        self.std = std
+        self.aug_config = aug_config
+        self.label_func = label_func
+        self.label_config = label_config
+
+        if self.is_train:
+            self.do_augment = True
+        else:
+            assert 0, "testing not supported for mpii_hm36_Dataset"
+
+        self.db_length = self.num_samples0 * 3
+
+        self.count = 0
+        self.idx1 = np.arange(self.num_samples1)
+        np.random.shuffle(self.idx1)
+        self.idx2 = np.arange(self.num_samples2)
+        np.random.shuffle(self.idx2)
+
+    def __getitem__(self, index):
+        if index < self.num_samples0:
+            the_db = self.db0[index]
+        elif index < self.num_samples0 * 2:
+            the_db = self.db1[self.idx1[index - self.num_samples0]]
+        else:
+            the_db = self.db2[self.idx2[index - self.num_samples0 * 2]]
+
+
+        img_patch, label, label_weight = get_single_patch_sample(the_db['image'], the_db['center_x'],
+                                                                 the_db['center_y'],
+                                                                 the_db['width'], the_db['height'],
+                                                                 the_db['joints_3d'].copy(),
+                                                                 the_db['joints_3d_vis'].copy(),
+                                                                 self.db2[0]['flip_pairs'].copy(),
+                                                                 self.db2[0]['parent_ids'].copy(), self.patch_width,
+                                                                 self.patch_height, self.rect_3d_width,
+                                                                 self.rect_3d_height, self.mean,
+                                                                 self.std, self.do_augment, self.aug_config,
+                                                                 self.label_func,self.label_config, depth_in_image=True)
+
+        self.count = self.count + 1
+        if self.count >= self.db_length:
+            self.count = 0
+            self.idx1 = np.arange(self.num_samples1)
+            np.random.shuffle(self.idx1)
+            self.idx2 = np.arange(self.num_samples2)
+            np.random.shuffle(self.idx2)
 
         return img_patch.astype(np.float32), label.astype(np.float32), label_weight.astype(np.float32)
 

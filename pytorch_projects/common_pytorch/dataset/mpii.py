@@ -21,7 +21,7 @@ def check_config_type(c1, c2):
 
 class mpii(IMDB):
 
-    def __init__(self, image_set_name, dataset_path, patch_width, patch_height, rect_3d_width=None, rect_3d_height=None):
+    def __init__(self, image_set_name, dataset_path, patch_width, patch_height, *args):
         '''
         0-R_Ankle, 1-R_Knee, 2-R_Hip, 3-L_Hip, 4-L_Knee, 5-L_Ankle, 6-Pelvis, 7-Thorax,
         8-Neck, 9-Head, 10-R_Wrist, 11-R_Elbow, 12-R_Shoulder, 13-L_Shoulder, 14-L_Elbow, 15-L_Wrist
