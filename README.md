@@ -37,6 +37,14 @@ If you find Integral Regression useful in your research, please consider citing:
   year={2017}
 }
 ```
+```
+@article{sun2018integral,
+  title={An Integral Pose Regression System for the ECCV2018 PoseTrack Challenge},
+  author={Sun, Xiao and Li, Chuankang and Lin, Stephen},
+  journal={arXiv preprint arXiv:1809.06079},
+  year={2018}
+}
+```
 
 ## Main Results
 Train on CHALL_H80K train, evaluate on CHALL_H80K val.
