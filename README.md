@@ -70,6 +70,7 @@ Train on CHALL_H80K train+val, evaluate on CHALL_H80K test.
 Python Version: 3.6 <br/>
 OS: CentOs7 (Other Linux system is also OK) <br/>
 CUDA: 9.0 (least 8.0) <br/>
+PyTorch:0.4.0(see issue https://github.com/JimmySuen/integral-human-pose/issues/4)
 
 
 ## Installation
