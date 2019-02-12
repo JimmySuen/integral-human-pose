@@ -2,6 +2,10 @@
 
 The major contributors of this repository include [Xiao Sun](https://jimmysuen.github.io/), [Chuankang Li](https://github.com/lck1201), [Bin Xiao](https://github.com/leoxiaobin), [Fangyin Wei](https://weify627.github.io/), [Yichen Wei](https://github.com/YichenWei).
 
+**NEWS**
+
+[A third-party implementation](https://github.com/mks0601/Integral-Human-Pose-Regression-for-3D-Human-Pose-Estimation) by  [mks0601](https://github.com/mks0601)
+
 ## Introduction
 
 **Integral Regression** is initially described in an [ECCV 2018 paper](https://arxiv.org/abs/1711.08229). ([Slides](https://jimmysuen.github.io/slides/xiaosun_integral_human_pose_regression.pptx)).
@@ -13,7 +17,6 @@ The Integral Regression is also known as soft-argmax. Please refer to two contem
 
 <img src='figure/overview5.png' width='800'>
 <img src='figure/examples2.png' width='800'>
-
 
 ## Disclaimer
 
