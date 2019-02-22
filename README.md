@@ -4,7 +4,8 @@ The major contributors of this repository include [Xiao Sun](https://jimmysuen.g
 
 **NEWS**
 
-[A third-party implementation](https://github.com/mks0601/Integral-Human-Pose-Regression-for-3D-Human-Pose-Estimation) by  [mks0601](https://github.com/mks0601)
+- 2019.2.22: The project is built on old version of pytorch(0.4.0), and currently the latest released one has updated to 1.0.1. So there may be some compatibility problems. Please feel free to submit new issues.
+- 2019.2.12: [A third-party implementation](https://github.com/mks0601/Integral-Human-Pose-Regression-for-3D-Human-Pose-Estimation) by  [mks0601](https://github.com/mks0601)
 
 ## Introduction
 
