@@ -2,12 +2,6 @@
 
 The major contributors of this repository include [Xiao Sun](https://jimmysuen.github.io/), [Chuankang Li](https://github.com/lck1201), [Bin Xiao](https://github.com/leoxiaobin), [Fangyin Wei](https://weify627.github.io/), [Yichen Wei](https://github.com/YichenWei).
 
-**NEWS**
-
-- 2019.2.22: The project is built on old version of pytorch(0.4.0), and currently the latest released one has updated to 1.0.1. So there may be some compatibility problems. Please feel free to submit new issues.
-- 2019.2.12: [A third-party implementation](https://github.com/mks0601/Integral-Human-Pose-Regression-for-3D-Human-Pose-Estimation) by  [mks0601](https://github.com/mks0601)
-- 2019.3.7: [A third-party implementation](https://github.com/mkocabas/EpipolarPose) by [mkocabas](https://github.com/mkocabas)
-
 ## Introduction
 
 **Integral Regression** is initially described in an [ECCV 2018 paper](https://arxiv.org/abs/1711.08229). ([Slides](https://jimmysuen.github.io/slides/xiaosun_integral_human_pose_regression.pptx)).
@@ -156,4 +150,7 @@ To run evaluation on CHALL_H80K Val dataset
 ```bash
 python test.py --cfg experiments/hm36/resnet152v1_ft/d-mch_384x288_deconv256x3_min-int-l1_adam_bs12-4gpus/lr1e-4_x300-270-290.yaml --model=../../model/hm36_challenge/model_chall_train_152ft_384x288.pth.tar
 ```
-## FAQ
+## Extensions
+- The project is built on old version of pytorch(0.4.0), and currently the latest released one has updated to 1.0.1. So there may be some compatibility problems. Please feel free to submit new issues.
+-  [A third-party implementation](https://github.com/mks0601/Integral-Human-Pose-Regression-for-3D-Human-Pose-Estimation) by  [mks0601](https://github.com/mks0601)
+-  [A third-party implementation](https://github.com/mkocabas/EpipolarPose) by [mkocabas](https://github.com/mkocabas)
