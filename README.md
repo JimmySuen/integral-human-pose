@@ -85,7 +85,7 @@ pip install pyyaml
 
 
 ## Preparation for Training & Testing
-1. Download Human3.6M(ECCV18 Challenge) image from [Human3.6M Dataset](http://vision.imar.ro/human3.6m/description.php)
+1. Download Human3.6M(ECCV18 Challenge) image from [Human3.6M Dataset](http://vision.imar.ro/human3.6m/description.php) and [Our processed annotation](https://pan.baidu.com/s/1Qg4dH8PBXm8SzApI-uu0GA) (code: kfsm)
 2. Download MPII image from [MPII Human Pose Dataset](http://human-pose.mpi-inf.mpg.de/)
 3. Download COCO2017 image from [COCO Dataset](http://cocodataset.org/#home)
 4. Download cache file from [Dropbox](https://www.dropbox.com/sh/uouev0a1ao84ofd/AADAjJUdr_Fm-eubk7c_s2JTa?dl=0)
@@ -154,5 +154,3 @@ python test.py --cfg experiments/hm36/resnet152v1_ft/d-mch_384x288_deconv256x3_m
 - The project is built on old version of pytorch(0.4.0), and currently the latest released one has updated to 1.0.1. So there may be some compatibility problems. Please feel free to submit new issues.
 -  [A third-party implementation](https://github.com/mks0601/Integral-Human-Pose-Regression-for-3D-Human-Pose-Estimation) by  [mks0601](https://github.com/mks0601)
 -  [A third-party implementation](https://github.com/mkocabas/EpipolarPose) by [mkocabas](https://github.com/mkocabas)
-- Here is our processed HM3.6M Annotation: https://pan.baidu.com/s/1Qg4dH8PBXm8SzApI-uu0GA, CODE: kfsm (Raise issue if you have problem getting access to it).
-
